@@ -19,7 +19,7 @@ public class Quote {
         this.type = type;
     }
 
-    public value getValue() {
+    public Value getValue() {
         return this.value;
     }
 
