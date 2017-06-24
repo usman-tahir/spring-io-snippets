@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Hello Twitter</title>
+        <body>
+            <h3>Hello, <span th:next="${twitterProfile.name}">Some User</span>!</h3>
+            <h4>These are your friends:</h4>
+
+            <ul>
+                <li th:each"friend:${friends}" th:text="${friend.name}">Friend</li>
+            </ul>
+        </body>
+    </head>
+</html>
