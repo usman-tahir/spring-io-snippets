@@ -23,16 +23,14 @@ public class HelloController {
         this.connectionRepository = connectionRepository;
     }
 
-    @RequestMapping(method = RequestMapping.GET) {
-        public String helloTwitter(Model model) {
-            if (connectionRepository.findPrimaryConnection(Twitter.class) == null) {
-                return "redirect:/connect/twitter";
-            }
-
-            model.addAttribute(twitter.userOperations().getUserProfile());
-            CursoredList<TwitterProfile> friends = twitter.friendOperations().getFriends();
-            model.addAttribute("friends", friends);
-            return "hello";
+    @RequestMapping(method=RequestMethod.GET)
+    public String helloTwitter(Model model) {
+        if (connectionRepository.findPrimaryConnection(Twitter.class) == null) {
+            return "redirect:/connect/twitter";
         }
+        model.addAttribute(twitter.userOperations().getUserProfile());
+        CursoredList<TwitterProfile> friends = twitter.friendOperations().getFriends();
+        model.addAttribute("friends", friends);
+        return "hello";
     }
 }
