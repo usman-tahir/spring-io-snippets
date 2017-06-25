@@ -12,7 +12,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Controller
 public class WebController extends WebMvcConfigurerAdapter {
     
-    public void addViewController(ViewControllerRegistry registry) {
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/results").setViewName("results");
     }
 
