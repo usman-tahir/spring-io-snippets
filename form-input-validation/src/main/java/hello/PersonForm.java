@@ -1,12 +1,12 @@
 package hello;
 
 import javax.validation.constraints.Min;
-import java.validation.constraints.NotNull;
-import java.validation.constraints.Size;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 public class PersonForm {
     @NotNull
-    @size(min = 2, max = 30)
+    @Size(min = 2, max = 30)
     private String name;
 
     @NotNull
