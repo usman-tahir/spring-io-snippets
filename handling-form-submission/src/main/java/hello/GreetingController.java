@@ -8,6 +8,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class GreetingController {
+
+    @GetMapping("/")
+    public String home() {
+        return "home";
+    }
+
     @GetMapping("/greeting")
     public String greetingForm(Model model) {
         model.addAttribute("greeting", new Greeting());
